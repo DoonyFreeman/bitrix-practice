@@ -41,6 +41,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 <script defer src="<?= SITE_TEMPLATE_PATH ?>/assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="<?= SITE_TEMPLATE_PATH ?>/assets/js/vendor/SplitText.min.js"></script>
 <script defer src="<?= SITE_TEMPLATE_PATH ?>/assets/js/vendor/lenis.min.js"></script>
+<script defer src="<?= SITE_TEMPLATE_PATH ?>/assets/js/vendor/photoswipe.umd.min.js"></script>
+<script defer src="<?= SITE_TEMPLATE_PATH ?>/assets/js/vendor/photoswipe-lightbox.umd.min.js"></script>
 <script defer src="<?= bwAsset(SITE_TEMPLATE_PATH . '/assets/js/app.js') ?>"></script>
 <script defer src="<?= bwAsset(SITE_TEMPLATE_PATH . '/assets/js/animations.js') ?>"></script>
 </body>

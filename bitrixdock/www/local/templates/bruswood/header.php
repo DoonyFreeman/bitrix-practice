@@ -18,6 +18,8 @@ $asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/tokens.css'));
 $asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/main.css'));
 $asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/home.css'));
 $asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/catalog.css'));
+$asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/detail.css'));
+$asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/photoswipe.css'));
 
 // на главной шапка лежит поверх hero и прозрачна до скролла
 $isHome = $APPLICATION->GetCurPage(true) === '/index.php';

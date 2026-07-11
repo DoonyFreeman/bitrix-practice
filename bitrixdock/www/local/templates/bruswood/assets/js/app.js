@@ -68,4 +68,33 @@
             window.location.assign(url.toString());
         });
     }
+
+    // Детальная: лайтбокс галереи (PhotoSwipe)
+    if (window.PhotoSwipeLightbox && window.PhotoSwipe && document.getElementById('house-gallery')) {
+        var lightbox = new PhotoSwipeLightbox({
+            gallery: '#house-gallery',
+            children: 'a',
+            pswpModule: window.PhotoSwipe,
+            showHideAnimationType: 'zoom',
+            bgOpacity: 0.92
+        });
+        lightbox.init();
+    }
+
+    // Детальная: переключение планировок по этажам
+    document.querySelectorAll('[data-plans]').forEach(function (plansEl) {
+        plansEl.addEventListener('click', function (e) {
+            var tab = e.target.closest('[data-plan-tab]');
+            if (!tab) return;
+            var idx = tab.getAttribute('data-plan-tab');
+            plansEl.querySelectorAll('[data-plan-tab]').forEach(function (t) {
+                var active = t === tab;
+                t.classList.toggle('is-active', active);
+                t.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            plansEl.querySelectorAll('[data-plan-pane]').forEach(function (p) {
+                p.classList.toggle('is-active', p.getAttribute('data-plan-pane') === idx);
+            });
+        });
+    });
 })();

@@ -6,16 +6,70 @@ $sectionCode = trim((string)($_GET['SECTION_CODE'] ?? ''), '/');
 $elementCode = trim((string)($_GET['ELEMENT_CODE'] ?? ''), '/');
 
 if ($elementCode !== '') {
-    // Детальная страница дома — спринт 5
-    $APPLICATION->SetTitle('Проект дома');
+    // ---- Детальная страница дома ----
     ?>
-    <div class="page-head">
-        <div class="container">
-            <h1>Страница проекта</h1>
-            <p class="page-head__lead">Детальная страница дома появится в спринте 5.</p>
-        </div>
+    <div class="container">
+        <?php $APPLICATION->IncludeComponent('bitrix:breadcrumb', 'bruswood', [
+            'START_FROM' => '0',
+            'PATH' => '',
+            'SITE_ID' => 's1',
+        ]); ?>
     </div>
     <?php
+    // catalog.element возвращает ID показанного элемента — пригодится для «соседних»
+    $elementId = $APPLICATION->IncludeComponent('bitrix:catalog.element', 'house', [
+        'IBLOCK_TYPE' => 'catalog',
+        'IBLOCK_ID' => '1',
+        'ELEMENT_ID' => '',
+        'ELEMENT_CODE' => $elementCode,
+        'SECTION_CODE' => $sectionCode,
+        'CHECK_SECTION_ID_VARIABLE' => 'N',
+        'SET_TITLE' => 'Y',
+        'SET_META_KEYWORDS' => 'N',
+        'SET_META_DESCRIPTION' => 'Y',
+        'SET_CANONICAL_URL' => 'Y',
+        'ADD_SECTIONS_CHAIN' => 'Y',
+        'ADD_ELEMENT_CHAIN' => 'Y',
+        'SET_STATUS_404' => 'Y',
+        'SHOW_404' => 'Y',
+        'CACHE_TYPE' => 'A',
+        'CACHE_TIME' => '3600',
+        'CACHE_GROUPS' => 'N',
+    ]);
+
+    if ($elementId): ?>
+        <section class="section similar">
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <h2>Похожие проекты</h2>
+                    <a href="/catalog/" class="link-arrow">Весь каталог<span aria-hidden="true"> →</span></a>
+                </header>
+                <?php
+                $GLOBALS['similarFilter'] = ['!ID' => (int)$elementId];
+                $APPLICATION->IncludeComponent('bitrix:catalog.section', 'featured', [
+                    'IBLOCK_TYPE' => 'catalog',
+                    'IBLOCK_ID' => '1',
+                    'INCLUDE_SUBSECTIONS' => 'Y',
+                    'FILTER_NAME' => 'similarFilter',
+                    'CACHE_FILTER' => 'Y',
+                    'ELEMENT_SORT_FIELD' => 'sort',
+                    'ELEMENT_SORT_ORDER' => 'asc',
+                    'PAGE_ELEMENT_COUNT' => '3',
+                    'PROPERTY_CODE_1' => ['PRICE', 'AREA', 'BEDROOMS', 'FLOORS'],
+                    'SET_TITLE' => 'N',
+                    'SET_META_KEYWORDS' => 'N',
+                    'SET_META_DESCRIPTION' => 'N',
+                    'ADD_SECTIONS_CHAIN' => 'N',
+                    'DISPLAY_TOP_PAGER' => 'N',
+                    'DISPLAY_BOTTOM_PAGER' => 'N',
+                    'CACHE_TYPE' => 'A',
+                    'CACHE_TIME' => '3600',
+                    'CACHE_GROUPS' => 'N',
+                ]); ?>
+            </div>
+        </section>
+    <?php endif;
+
     require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
     return;
 }

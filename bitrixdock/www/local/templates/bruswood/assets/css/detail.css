@@ -1,0 +1,177 @@
+/* =============================================================
+   БрусВуд · детальная страница дома
+   ============================================================= */
+
+/* --- Крошки --- */
+.crumbs { padding: 20px 0 0; }
+.crumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+.crumbs__list li + li::before { content: '·'; margin-right: 6px; color: var(--amber); }
+.crumbs__list a { color: var(--ink-soft); text-decoration: none; }
+.crumbs__list a:hover { color: var(--forest); }
+
+/* --- Hero проекта --- */
+.house-hero { padding: 28px 0 0; }
+.house-hero__grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+}
+.house-hero__media {
+    border-radius: var(--r-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+.house-hero__media img { width: 100%; height: 100%; object-fit: cover; }
+.house-hero__title { margin-bottom: 0.35em; }
+.house-hero__lead { color: var(--ink-soft); }
+.house-hero__facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    font-size: 15px;
+}
+.house-hero__facts li { display: inline-flex; align-items: center; gap: 7px; }
+.house-hero__facts .icon { width: 17px; height: 17px; color: var(--amber); }
+.house-hero__price {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    color: var(--forest);
+    margin-bottom: 22px;
+}
+.house-hero__price span {
+    display: block;
+    font: 400 13px/1.4 var(--font-text);
+    color: var(--ink-soft);
+    margin-top: 6px;
+}
+
+/* --- Блоки --- */
+.house-block { padding-top: var(--section-y); }
+.house-block--soft {
+    background: var(--paper-soft);
+    padding-block: var(--section-y);
+    margin-top: var(--section-y);
+}
+.house-block--soft + .house-block { padding-top: var(--section-y); }
+
+/* --- Галерея --- */
+.house-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+.house-gallery__item {
+    display: block;
+    border-radius: var(--r-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--paper-soft);
+}
+.house-gallery__item--wide { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+.house-gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+    .house-gallery__item:hover img { transform: scale(1.04); }
+}
+
+/* --- Планировки --- */
+.plans__tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+.plans__tab {
+    padding: 10px 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-pill);
+    background: transparent;
+    font: 600 14px/1 var(--font-text);
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.plans__tab:hover { border-color: var(--forest); color: var(--forest); }
+.plans__tab.is-active {
+    background: var(--forest);
+    border-color: var(--forest);
+    color: var(--paper);
+}
+.plans__panes { position: relative; }
+.plans__pane {
+    display: none;
+    background: #fff;
+    border-radius: var(--r-card);
+    padding: clamp(12px, 2vw, 28px);
+}
+.plans__pane.is-active { display: block; animation: planIn 0.35s var(--ease-out); }
+.plans__pane img { margin-inline: auto; max-height: 72vh; width: auto; max-width: 100%; }
+@keyframes planIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+}
+
+/* --- Описание + характеристики --- */
+.house-details {
+    display: grid;
+    grid-template-columns: 7fr 4fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: start;
+    padding-bottom: var(--section-y);
+}
+.house-details__text h2 { margin-top: 1.2em; }
+.house-details__text h2:first-child { margin-top: 0; }
+.house-equipment ul { padding-left: 20px; }
+.house-equipment li { margin-bottom: 8px; }
+
+.house-specs {
+    position: sticky;
+    top: 96px;
+    background: #fff;
+    border-radius: var(--r-card);
+    padding: 28px;
+}
+.house-specs h3 { margin-bottom: 18px; }
+.house-specs__list { margin: 0; }
+.house-specs__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 11px 0;
+}
+.house-specs__row + .house-specs__row { border-top: 1px solid var(--line); }
+.house-specs__row dt { color: var(--ink-soft); font-size: 14px; }
+.house-specs__row dd { margin: 0; font-weight: 600; font-size: 14px; text-align: right; }
+
+/* --- Похожие --- */
+.similar { padding-bottom: var(--section-y); }
+
+/* --- Адаптив --- */
+@media (max-width: 900px) {
+    .house-hero__grid { grid-template-columns: 1fr; }
+    .house-details { grid-template-columns: 1fr; }
+    .house-specs { position: static; }
+    .house-gallery { grid-template-columns: repeat(2, 1fr); }
+    .house-gallery__item--wide { grid-column: span 2; grid-row: auto; }
+}
+@media (max-width: 640px) {
+    .house-gallery { grid-template-columns: 1fr; }
+    .house-gallery__item--wide { grid-column: auto; }
+}
