@@ -6,10 +6,18 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 
 use Bitrix\Main\Page\Asset;
 
+/** Путь к ассету с версией по filemtime — сбрасывает браузерный кеш при изменении файла. */
+function bwAsset(string $path): string
+{
+    $file = $_SERVER['DOCUMENT_ROOT'] . $path;
+    return $path . '?v=' . (is_file($file) ? filemtime($file) : 1);
+}
+
 $asset = Asset::getInstance();
-$asset->addCss(SITE_TEMPLATE_PATH . '/assets/css/tokens.css');
-$asset->addCss(SITE_TEMPLATE_PATH . '/assets/css/main.css');
-$asset->addCss(SITE_TEMPLATE_PATH . '/assets/css/home.css');
+$asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/tokens.css'));
+$asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/main.css'));
+$asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/home.css'));
+$asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/catalog.css'));
 
 // на главной шапка лежит поверх hero и прозрачна до скролла
 $isHome = $APPLICATION->GetCurPage(true) === '/index.php';

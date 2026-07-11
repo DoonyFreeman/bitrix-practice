@@ -69,6 +69,7 @@ if ($iblock) {
         'DETAIL_PAGE_URL' => '/catalog/#SECTION_CODE#/#ELEMENT_CODE#/',
         'INDEX_ELEMENT' => 'Y',
         'INDEX_SECTION' => 'Y',
+        'SECTION_PROPERTY' => 'Y', // включает привязки свойств (нужно умному фильтру)
         'VERSION' => 1,
         'GROUP_ID' => ['2' => 'R'], // «все посетители» — чтение
         'FIELDS' => [

@@ -45,4 +45,27 @@
             }
         });
     }
+
+    // Каталог: мобильная фильтр-панель
+    var filterToggle = document.getElementById('filter-toggle');
+    var filterClose = document.getElementById('filter-close');
+    var filterOverlay = document.getElementById('filter-overlay');
+    if (filterToggle) {
+        var closeFilter = function () { document.body.classList.remove('filter-open'); };
+        filterToggle.addEventListener('click', function () {
+            document.body.classList.toggle('filter-open');
+        });
+        if (filterClose) filterClose.addEventListener('click', closeFilter);
+        if (filterOverlay) filterOverlay.addEventListener('click', closeFilter);
+    }
+
+    // Каталог: сортировка — меняем параметр sort, сохраняя фильтр в URL
+    var sortSelect = document.getElementById('catalog-sort');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', function () {
+            var url = new URL(window.location.href);
+            url.searchParams.set('sort', sortSelect.value);
+            window.location.assign(url.toString());
+        });
+    }
 })();
