@@ -9,6 +9,10 @@ use Bitrix\Main\Page\Asset;
 $asset = Asset::getInstance();
 $asset->addCss(SITE_TEMPLATE_PATH . '/assets/css/tokens.css');
 $asset->addCss(SITE_TEMPLATE_PATH . '/assets/css/main.css');
+$asset->addCss(SITE_TEMPLATE_PATH . '/assets/css/home.css');
+
+// на главной шапка лежит поверх hero и прозрачна до скролла
+$isHome = $APPLICATION->GetCurPage(true) === '/index.php';
 $asset->addString('<link rel="preload" href="' . SITE_TEMPLATE_PATH . '/assets/fonts/prata-v22-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>');
 $asset->addString('<link rel="preload" href="' . SITE_TEMPLATE_PATH . '/assets/fonts/manrope-v20-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>');
 ?>
@@ -20,11 +24,11 @@ $asset->addString('<link rel="preload" href="' . SITE_TEMPLATE_PATH . '/assets/f
     <?php $APPLICATION->ShowHead(); ?>
     <title><?php $APPLICATION->ShowTitle(); ?></title>
 </head>
-<body>
+<body<?= $isHome ? ' class="page-home"' : '' ?>>
 <?php $APPLICATION->ShowPanel(); ?>
 <div class="top-sentinel" id="top-sentinel" aria-hidden="true"></div>
 
-<header class="header" id="header">
+<header class="header<?= $isHome ? ' header--overlay' : '' ?>" id="header">
     <div class="container header__in">
         <a href="/" class="logo" aria-label="БрусВуд — на главную">Брус<span>Вуд</span></a>
 

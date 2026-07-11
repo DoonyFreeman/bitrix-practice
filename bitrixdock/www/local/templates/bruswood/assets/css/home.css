@@ -1,0 +1,289 @@
+/* =============================================================
+   БрусВуд · главная: hero, цифры, подборка, этапы, CTA
+   ============================================================= */
+
+/* --- Прозрачная шапка поверх hero --- */
+.header--overlay {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    background: transparent;
+}
+.header--overlay .logo,
+.header--overlay .logo span,
+.header--overlay .nav__link,
+.header--overlay .header__phone {
+    color: var(--paper);
+}
+.header--overlay .nav__link:hover { color: #fff; }
+.header--overlay .burger span,
+.header--overlay .burger span::before,
+.header--overlay .burger span::after { background: var(--paper); }
+
+.header--overlay.is-scrolled,
+.nav-open .header--overlay {
+    background: var(--paper);
+}
+.header--overlay.is-scrolled .logo,
+.nav-open .header--overlay .logo { color: var(--ink); }
+.header--overlay.is-scrolled .logo span,
+.nav-open .header--overlay .logo span { color: var(--forest); }
+.header--overlay.is-scrolled .nav__link,
+.nav-open .header--overlay .nav__link { color: var(--ink-soft); }
+.header--overlay.is-scrolled .nav__link.is-active { color: var(--forest); }
+.header--overlay.is-scrolled .header__phone { color: var(--ink); }
+.header--overlay.is-scrolled .burger span,
+.header--overlay.is-scrolled .burger span::before,
+.header--overlay.is-scrolled .burger span::after,
+.nav-open .header--overlay .burger span::before,
+.nav-open .header--overlay .burger span::after { background: var(--ink); }
+.nav-open .header--overlay .burger span { background: transparent; }
+
+/* --- Hero --- */
+.hero {
+    position: relative;
+    min-height: 100dvh;
+    display: flex;
+    align-items: flex-end;
+    color: var(--paper);
+    overflow: hidden;
+}
+.hero__media {
+    position: absolute;
+    inset: -6% 0; /* запас под parallax, чтобы не оголялись края */
+    z-index: -1;
+}
+.hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero__scrim {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(20, 26, 20, 0.42) 0%, rgba(20, 26, 20, 0.05) 35%, rgba(20, 26, 20, 0.55) 100%);
+}
+.hero__content {
+    width: 100%;
+    padding-bottom: clamp(56px, 10vh, 110px);
+}
+.hero__title {
+    color: var(--paper);
+    font-size: clamp(2.4rem, 5.4vw, 4.4rem);
+    max-width: 18ch;
+    margin-bottom: 0.4em;
+    text-wrap: balance;
+}
+.hero__lead {
+    font-size: clamp(16px, 1.4vw, 19px);
+    color: rgba(246, 243, 236, 0.88);
+    max-width: 42ch;
+    margin-bottom: 32px;
+}
+.btn--light {
+    background: var(--paper);
+    border-color: var(--paper);
+    color: var(--ink);
+}
+.btn--light:hover { background: #fff; border-color: #fff; color: var(--forest-deep); }
+
+/* --- Цифры --- */
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(24px, 4vw, 56px);
+}
+.stat__num {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 4.6vw, 4rem);
+    line-height: 1;
+    color: var(--forest);
+}
+.stat__unit { font-size: 0.6em; color: var(--amber); }
+.stat__label {
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    max-width: 22ch;
+}
+
+/* --- Заголовки секций --- */
+.section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: clamp(28px, 4vw, 48px);
+}
+.section-head h2 { margin-bottom: 0; }
+.link-arrow {
+    font: 600 15px/1 var(--font-text);
+    color: var(--forest);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color var(--t-fast) var(--ease-out);
+}
+.link-arrow:hover { color: var(--forest-deep); }
+
+/* --- Карточки домов --- */
+.house-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 2.6vw, 36px);
+}
+.house-card {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+}
+.house-card__media {
+    display: block;
+    border-radius: var(--r-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--paper-soft);
+}
+.house-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+    .house-card:hover .house-card__media img { transform: scale(1.05); }
+    .house-card:hover .house-card__name { color: var(--forest); }
+}
+.house-card__body { display: block; padding-top: 16px; }
+.house-card__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+}
+.house-card__name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    transition: color var(--t-fast) var(--ease-out);
+}
+.house-card__price { font: 600 15px/1.4 var(--font-text); color: var(--ink); white-space: nowrap; }
+.house-card__meta {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    color: var(--ink-soft);
+}
+
+/* --- Этапы строительства (pin-сцена) --- */
+.steps {
+    background: var(--forest-deep);
+    color: var(--paper-on-dark);
+}
+.steps__layout {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+    min-height: 100vh;
+    padding-block: 48px;
+}
+.steps__heading { color: var(--paper); margin-bottom: 40px; }
+
+/* По умолчанию (без JS / reduced-motion) шаги — обычный вертикальный список.
+   Класс steps--pinned вешает JS, создавая pin-сцену. */
+.steps__item + .steps__item { margin-top: 32px; }
+.steps--pinned .steps__items { position: relative; min-height: 260px; }
+.steps--pinned .steps__item { position: absolute; inset: 0; margin-top: 0; }
+.steps__num {
+    font-family: var(--font-display);
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    color: var(--amber);
+}
+.steps__item h3 {
+    color: var(--paper);
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    margin: 10px 0 12px;
+}
+.steps__item p { color: var(--paper-on-dark); max-width: 40ch; }
+.steps__progress {
+    display: none;
+    margin-top: 48px;
+    height: 2px;
+    background: rgba(246, 243, 236, 0.18);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.steps--pinned .steps__progress { display: block; }
+.steps__bar {
+    display: block;
+    height: 100%;
+    background: var(--amber);
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+.steps__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    max-height: 74vh;
+    border-radius: var(--r-card);
+    overflow: hidden;
+}
+.steps__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.steps__img:not(:first-child) { opacity: 0; } /* JS показывает по ходу сцены */
+
+/* --- CTA --- */
+.cta {
+    position: relative;
+    color: var(--paper);
+    padding-block: clamp(96px, 16vw, 180px);
+    overflow: hidden;
+}
+.cta__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+.cta__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(24, 33, 25, 0.88) 0%, rgba(24, 33, 25, 0.55) 60%, rgba(24, 33, 25, 0.35) 100%);
+    z-index: -1;
+}
+.cta__in h2 { color: var(--paper); max-width: 16ch; }
+.cta__lead { color: rgba(246, 243, 236, 0.85); margin-bottom: 28px; max-width: 40ch; }
+
+/* главная: подвал без верхнего отступа (CTA примыкает) */
+.page-home .footer { margin-top: 0; }
+
+/* --- Адаптив --- */
+@media (max-width: 1023px) {
+    .stats__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+    /* этапы: обычный вертикальный поток вместо pin-сцены */
+    .steps__layout {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        padding-block: var(--section-y);
+    }
+    .steps__media {
+        order: -1;
+        aspect-ratio: 16 / 10;
+        max-height: none;
+    }
+    .steps__img:not(:first-child) { display: none; }
+}
+@media (max-width: 767px) {
+    .house-cards { grid-template-columns: 1fr; }
+    .section-head { flex-direction: column; gap: 8px; align-items: flex-start; }
+}

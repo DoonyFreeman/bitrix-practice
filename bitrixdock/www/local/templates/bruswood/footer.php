@@ -42,5 +42,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 <script defer src="<?= SITE_TEMPLATE_PATH ?>/assets/js/vendor/SplitText.min.js"></script>
 <script defer src="<?= SITE_TEMPLATE_PATH ?>/assets/js/vendor/lenis.min.js"></script>
 <script defer src="<?= SITE_TEMPLATE_PATH ?>/assets/js/app.js"></script>
+<script defer src="<?= SITE_TEMPLATE_PATH ?>/assets/js/animations.js"></script>
 </body>
 </html>

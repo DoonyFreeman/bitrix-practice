@@ -7,6 +7,7 @@
  *   docker compose exec -T -u www-data php php /var/www/bitrix/local/php_interface/migrations/001_create_houses.php
  *
  * Скрипт идемпотентен: существующие сущности пропускает.
+ * FORCE=1 в окружении — пересоздать элементы (например, после смены фото).
  */
 
 set_time_limit(0);
@@ -123,6 +124,12 @@ foreach ($props as $p) {
     ];
     if (!empty($p['USER_TYPE'])) $fields['USER_TYPE'] = $p['USER_TYPE'];
     if (!empty($p['FILE_TYPE'])) $fields['FILE_TYPE'] = $p['FILE_TYPE'];
+    // фичи свойств: без LIST_PAGE_SHOW современный catalog.section не выведет свойство
+    $fields['FEATURES'] = [
+        ['MODULE_ID' => 'iblock', 'FEATURE_ID' => 'DETAIL_PAGE_SHOW', 'IS_ENABLED' => 'Y'],
+        ['MODULE_ID' => 'iblock', 'FEATURE_ID' => 'LIST_PAGE_SHOW',
+            'IS_ENABLED' => in_array($p['CODE'], ['PRICE', 'AREA', 'BEDROOMS', 'FLOORS', 'SIZE'], true) ? 'Y' : 'N'],
+    ];
     if ($p['SMART'] === 'Y') {
         $fields['SMART_FILTER'] = 'Y';
         $fields['SECTION_PROPERTY'] = 'Y';
@@ -177,11 +184,16 @@ echo "[+] SEO-шаблоны инфоблока\n";
 
 // ---------- 6. Элементы (карточки домов) ----------
 $el = new CIBlockElement();
+$force = getenv('FORCE') === '1';
 foreach ($data['houses'] as $h) {
     $exists = CIBlockElement::GetList([], ['IBLOCK_ID' => $iblockId, 'CODE' => $h['code'], 'CHECK_PERMISSIONS' => 'N'], false, false, ['ID'])->Fetch();
-    if ($exists) {
+    if ($exists && !$force) {
         echo "[=] {$h['name']} уже есть\n";
         continue;
+    }
+    if ($exists && $force) {
+        CIBlockElement::Delete($exists['ID']);
+        echo "[-] {$h['name']} удалён (FORCE)\n";
     }
 
     $gallery = [];
