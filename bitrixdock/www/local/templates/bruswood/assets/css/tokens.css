@@ -1,0 +1,72 @@
+/* =============================================================
+   БрусВуд · дизайн-токены
+   Палитра: Forest — глубокая хвоя + кость + янтарь.
+   Формы: интерактив (кнопки/пилюли) = 999px, карточки/медиа = 16px.
+   ============================================================= */
+
+/* --- Шрифты (self-hosted, кириллица+латиница) --- */
+@font-face {
+    font-family: 'Prata';
+    src: url('../fonts/prata-v22-cyrillic_latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope-v20-cyrillic_latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope-v20-cyrillic_latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope-v20-cyrillic_latin-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope-v20-cyrillic_latin-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* Цвет */
+    --paper: #F6F3EC;        /* светлая база: кость */
+    --paper-soft: #EDE8DC;   /* приглушённая подложка секций */
+    --ink: #20251F;          /* текст: зелёно-чёрный, не эспрессо */
+    --ink-soft: #5B6156;     /* вторичный текст */
+    --forest: #2F4A38;       /* хвоя: бренд, кнопки, акценты */
+    --forest-deep: #233829;  /* тёмные поверхности (подвал) */
+    --amber: #C28E45;        /* янтарь: дозированно — детали, ховеры */
+    --line: rgba(32, 37, 31, .14);
+    --paper-on-dark: rgba(246, 243, 236, .82);
+
+    /* Типографика */
+    --font-display: 'Prata', Georgia, serif;
+    --font-text: 'Manrope', system-ui, -apple-system, sans-serif;
+
+    /* Размеры */
+    --container: 1200px;
+    --gutter: clamp(20px, 4vw, 40px);
+    --section-y: clamp(64px, 10vw, 128px);
+
+    /* Формы: интерактив = пилюля, карточки/медиа = 16px */
+    --r-pill: 999px;
+    --r-card: 16px;
+
+    /* Движение */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --t-fast: 0.25s;
+}

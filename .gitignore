@@ -5,6 +5,10 @@ bitrixdock/www/*
 !bitrixdock/www/local/
 !bitrixdock/www/index.php
 !bitrixdock/www/urlrewrite.php
+!bitrixdock/www/.top.menu.php
+!bitrixdock/www/catalog/
+!bitrixdock/www/about/
+!bitrixdock/www/contacts/
 
 # Копия данных миграции (канонический источник — assets-src/)
 bitrixdock/www/local/php_interface/migrations/data/
