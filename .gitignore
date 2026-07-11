@@ -6,6 +6,7 @@ bitrixdock/www/*
 !bitrixdock/www/index.php
 !bitrixdock/www/urlrewrite.php
 !bitrixdock/www/.top.menu.php
+!bitrixdock/www/404.php
 !bitrixdock/www/catalog/
 !bitrixdock/www/about/
 !bitrixdock/www/contacts/
