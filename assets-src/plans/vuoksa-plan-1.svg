@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 752 694" font-family="Georgia, 'Times New Roman', serif">
+<rect width="752" height="694" fill="#FAF7F2"/>
+<defs><pattern id="hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="8" stroke="#B07D46" stroke-width="1" opacity="0.45"/></pattern></defs>
+<text x="46" y="36" font-size="21" fill="#2B2620" letter-spacing="2.5" style="text-transform:uppercase">ВУОКСА · 1 ЭТАЖ</text>
+<text x="46" y="58" font-size="12" fill="#B07D46" font-family="Arial, sans-serif" letter-spacing="1">10×12 м · 168 м² общая</text>
+<rect x="46" y="98" width="660" height="110" fill="url(#hatch)" stroke="#2B2620" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="376" y="149" font-size="15" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Терраса</text>
+<text x="376" y="168" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">24 м²</text>
+<rect x="46" y="208" width="330" height="275" fill="#F5EEE3" stroke="#2B2620" stroke-width="1.5"/>
+<text x="211" y="341.5" font-size="15" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Гостиная</text>
+<text x="211" y="360.5" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">30 м²</text>
+<rect x="376" y="208" width="330" height="275" fill="#FFFFFF" stroke="#2B2620" stroke-width="1.5"/>
+<text x="541" y="341.5" font-size="15" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Кухня-столовая</text>
+<text x="541" y="360.5" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">30 м²</text>
+<rect x="46" y="483" width="220" height="165" fill="#F5EEE3" stroke="#2B2620" stroke-width="1.5"/>
+<text x="156" y="561.5" font-size="15" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Прихожая</text>
+<text x="156" y="580.5" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">12 м²</text>
+<rect x="266" y="483" width="165" height="165" fill="#FFFFFF" stroke="#2B2620" stroke-width="1.5"/>
+<text x="348.5" y="561.5" font-size="15" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Сауна</text>
+<text x="348.5" y="580.5" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">9 м²</text>
+<rect x="431" y="483" width="110" height="165" fill="#F5EEE3" stroke="#2B2620" stroke-width="1.5"/>
+<text x="486" y="561.5" font-size="12" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Санузел</text>
+<text x="486" y="580.5" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">6 м²</text>
+<rect x="541" y="483" width="165" height="165" fill="#FFFFFF" stroke="#2B2620" stroke-width="1.5"/>
+<text x="623.5" y="561.5" font-size="15" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Котельная</text>
+<text x="623.5" y="580.5" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">9 м²</text>
+<rect x="46" y="98" width="660" height="550" fill="none" stroke="#2B2620" stroke-width="7"/>
+<text x="376" y="674" font-size="12" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif" opacity="0.6">12 м</text>
+<text x="32" y="373" font-size="12" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif" opacity="0.6" transform="rotate(-90 32 373)">10 м</text>
+</svg>

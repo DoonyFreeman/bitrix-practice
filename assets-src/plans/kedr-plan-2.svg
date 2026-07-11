@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587 501.5" font-family="Georgia, 'Times New Roman', serif">
+<rect width="587" height="501.5" fill="#FAF7F2"/>
+<defs><pattern id="hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="8" stroke="#B07D46" stroke-width="1" opacity="0.45"/></pattern></defs>
+<text x="46" y="36" font-size="21" fill="#2B2620" letter-spacing="2.5" style="text-transform:uppercase">КЕДР · 2 ЭТАЖ</text>
+<text x="46" y="58" font-size="12" fill="#B07D46" font-family="Arial, sans-serif" letter-spacing="1">9×9 м · 138 м² общая</text>
+<rect x="46" y="98" width="247.5" height="192.5" fill="#FFFFFF" stroke="#2B2620" stroke-width="1.5"/>
+<text x="169.75" y="190.25" font-size="15" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Спальня 1</text>
+<text x="169.75" y="209.25" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">15.8 м²</text>
+<rect x="293.5" y="98" width="247.5" height="192.5" fill="#F5EEE3" stroke="#2B2620" stroke-width="1.5"/>
+<text x="417.25" y="190.25" font-size="15" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Спальня 2</text>
+<text x="417.25" y="209.25" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">15.8 м²</text>
+<rect x="46" y="290.5" width="220" height="165" fill="#FFFFFF" stroke="#2B2620" stroke-width="1.5"/>
+<text x="156" y="369" font-size="15" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Спальня 3</text>
+<text x="156" y="388" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">12 м²</text>
+<rect x="266" y="290.5" width="137.5" height="165" fill="#F5EEE3" stroke="#2B2620" stroke-width="1.5"/>
+<text x="334.75" y="369" font-size="12" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Ванная</text>
+<text x="334.75" y="388" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">7.5 м²</text>
+<rect x="403.5" y="290.5" width="137.5" height="165" fill="#FFFFFF" stroke="#2B2620" stroke-width="1.5"/>
+<text x="472.25" y="369" font-size="12" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif">Холл</text>
+<text x="472.25" y="388" font-size="12" fill="#B07D46" text-anchor="middle" font-family="Arial, sans-serif">7.5 м²</text>
+<rect x="46" y="98" width="495" height="357.5" fill="none" stroke="#2B2620" stroke-width="7"/>
+<text x="293.5" y="481.5" font-size="12" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif" opacity="0.6">9 м</text>
+<text x="32" y="276.75" font-size="12" fill="#2B2620" text-anchor="middle" font-family="Arial, sans-serif" opacity="0.6" transform="rotate(-90 32 276.75)">6.5 м</text>
+</svg>
