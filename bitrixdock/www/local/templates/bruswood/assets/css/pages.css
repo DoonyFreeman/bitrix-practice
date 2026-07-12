@@ -1,0 +1,133 @@
+/* =============================================================
+   БрусВуд · О компании и Контакты
+   ============================================================= */
+
+/* --- О компании: история --- */
+.about-history__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+}
+.about-history__text p:last-child { margin-bottom: 0; }
+.about-history__media {
+    margin: 0;
+    border-radius: var(--r-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+.about-history__media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- Технология: сравнение бруса --- */
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 2.6vw, 32px);
+}
+.tech-card {
+    padding: clamp(24px, 3vw, 36px);
+    border: 1px solid var(--line);
+    border-radius: var(--r-card);
+    background: var(--paper);
+}
+.tech-card h3 { margin-bottom: 0.6em; }
+.tech-card__meta {
+    margin: 0;
+    font-size: 14px;
+    color: var(--amber);
+    font-weight: 600;
+}
+
+/* --- Как устроена стройка --- */
+.about-process__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+}
+.about-process__text p { color: var(--ink-soft); }
+.about-process__photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.about-process__photos img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: var(--r-card);
+}
+
+/* --- Ценности --- */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(20px, 2.6vw, 32px);
+}
+.value-card { text-align: left; }
+.value-card__num {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 2.6vw, 36px);
+    color: var(--forest);
+    margin-bottom: 10px;
+}
+.value-card p { margin: 0; color: var(--ink-soft); max-width: 26ch; }
+
+/* --- Контакты --- */
+.contacts__grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 380px) 1fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: start;
+}
+.contacts__card {
+    padding: clamp(28px, 3vw, 40px);
+    border: 1px solid var(--line);
+    border-radius: var(--r-card);
+    background: var(--paper);
+}
+.contacts__list { margin: 0 0 28px; display: grid; gap: 20px; }
+.contacts__row dt {
+    font: 600 13px/1 var(--font-text);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+}
+.contacts__row dd { margin: 0; font-size: 16px; }
+.contacts__row a { text-decoration: none; }
+.contacts__row a:hover { color: var(--forest); }
+
+.contacts__map {
+    position: relative;
+    border-radius: var(--r-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--paper-soft);
+}
+.contacts__map-svg { display: block; width: 100%; height: 100%; }
+.contacts__map-label {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 8px 16px;
+    border-radius: var(--r-pill);
+    background: var(--paper);
+    font: 600 14px/1 var(--font-text);
+    box-shadow: 0 6px 20px rgba(32, 37, 31, 0.1);
+}
+
+/* --- Адаптив --- */
+@media (max-width: 900px) {
+    .about-history__grid,
+    .about-process__grid,
+    .contacts__grid {
+        grid-template-columns: 1fr;
+    }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .tech-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+    .about-process__photos { grid-template-columns: 1fr 1fr; }
+}

@@ -29,6 +29,11 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                     'EDIT_TEMPLATE' => '',
                 ]); ?></li>
                 <li><a href="mailto:info@bruswood.local">info@bruswood.local</a></li>
+                <li><?php $APPLICATION->IncludeComponent('bitrix:main.include', '', [
+                    'AREA_FILE_SHOW' => 'file',
+                    'PATH' => SITE_TEMPLATE_PATH . '/include/address.php',
+                    'EDIT_TEMPLATE' => '',
+                ]); ?></li>
             </ul>
         </div>
     </div>

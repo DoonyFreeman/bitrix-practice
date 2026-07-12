@@ -19,12 +19,14 @@ $asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/main.css'));
 $asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/home.css'));
 $asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/catalog.css'));
 $asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/detail.css'));
+$asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/pages.css'));
 $asset->addCss(bwAsset(SITE_TEMPLATE_PATH . '/assets/css/photoswipe.css'));
 
 // на главной шапка лежит поверх hero и прозрачна до скролла
 $isHome = $APPLICATION->GetCurPage(true) === '/index.php';
 $asset->addString('<link rel="preload" href="' . SITE_TEMPLATE_PATH . '/assets/fonts/prata-v22-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>');
 $asset->addString('<link rel="preload" href="' . SITE_TEMPLATE_PATH . '/assets/fonts/manrope-v20-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>');
+$asset->addString('<link rel="icon" href="/favicon.ico" sizes="32x32">');
 ?>
 <!DOCTYPE html>
 <html lang="ru">
